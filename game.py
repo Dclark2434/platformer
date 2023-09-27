@@ -33,8 +33,9 @@ class Game:
         while True:
             self.display.fill((14, 219, 248)) # refill the screen with a sky blue color every frame to keep moving images from leaving a trail
             self.tilemap.render(self.display) # render the tilemap
-            self.player.update((self.movement[1] - self.movement[0], 0)) # update the player entity
+            self.player.update(self.tilemap, (self.movement[1] - self.movement[0], 0)) # update the player entity
             self.player.render(self.display) # render the player entity
+
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
