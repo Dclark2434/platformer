@@ -7,13 +7,13 @@ class PhysicsEntity:
         self.pos = list(pos)
         self.size = size
         self.velocity = [0, 0]
-        self.collisions = {'up': False, 'down': False, 'left': False, 'right': False}
+        self.collisions = {'up': False, 'down': False, 'right': False, 'left': False}
 
     def rect(self):
         return pygame.Rect(self.pos[0], self.pos[1], self.size[0], self.size[1])
     
     def update(self, tilemap, movement=(0, 0)):
-        self.collisions = {'up': False, 'down': False, 'left': False, 'right': False}
+        self.collisions = {'up': False, 'down': False, 'right': False, 'left': False}
 
         frame_movement = (movement[0] + self.velocity[0], movement[1] + self.velocity[1]) # add the movement from the frame to the velocity
 
