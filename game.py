@@ -1,10 +1,11 @@
 import pygame
-
 import sys
+
 from scripts.utils import load_image
 from scripts.utils import load_images
 from scripts.entities import PhysicsEntity
 from scripts.tilemap import Tilemap
+
 class Game:
     def __init__(self):
         pygame.init()
@@ -40,7 +41,7 @@ class Game:
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
-                if event.type == pygame.KEYDOWN: # I made this wasd because I'm a rebel. I read arrow keys are more common because they support multiple keyboard types but to me it feels wrong. Recommended only for qwerty keyboards or you can modify to K_UP, K_DOWN etc.
+                if event.type == pygame.KEYDOWN: # I made this wasd because I'm a rebel. You can change it to arrow keys if you want
                     if event.key == pygame.K_a:
                         self.movement[0] = True
                     if event.key == pygame.K_d:
